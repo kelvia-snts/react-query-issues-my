@@ -11,7 +11,9 @@ const getLabels = async (): Promise<Label[]> => {
 };
 
 export const useLabels = () => {
-  const LabelsQuery = useQuery(["labels"], getLabels);
+  const LabelsQuery = useQuery(["labels"], getLabels, {
+    staleTime: 1000 * 60 * 60, // 1 hour - stale(0)
+  });
 
   return LabelsQuery;
 };
