@@ -1,4 +1,4 @@
-# React Query - Issues
+# React Query - Issues - IN PROGRESS
 
 1. Clonar repositório
 2. Executar ``` yarn install``` o ```npm install```
