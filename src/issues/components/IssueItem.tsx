@@ -24,6 +24,16 @@ export const IssueItem: FC<Props> = ({ issueItem }) => {
     );
   };
 
+  const preSetData = () => {
+    queryClient.setQueryData(
+      ["issue", issueNumber],
+      () => getIssueComments(+issueNumber),
+      {
+        updatedAt: new Date().getTime() + 100000,
+      }
+    );
+  };
+
   return (
     <>
       {issueItem.map(({ number, user, id, state, title, comments }) => (
@@ -31,7 +41,7 @@ export const IssueItem: FC<Props> = ({ issueItem }) => {
           key={id}
           className="card mb-2 issue"
           onClick={() => navigate(`/issues/issue/${number}`)}
-          onMouseEnter={onMouseEnter}
+          onMouseEnter={preSetData}
         >
           <div className="card-body d-flex align-items-center">
             {state === State.Open ? (

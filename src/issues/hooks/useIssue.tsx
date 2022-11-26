@@ -15,7 +15,7 @@ export const getIssueComments = async (
 ): Promise<Issue[]> => {
   await sleep(2);
   const { data } = await githubApi.get<Issue[]>(
-    `issues/${issueNumber}/comments`
+    `/issues/${issueNumber}/comments`
   );
 
   return data;
