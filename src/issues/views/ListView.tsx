@@ -8,7 +8,11 @@ import { State } from "../interfaces";
 export const ListView = () => {
   const [selectLabels, setSelectLabels] = useState<string[]>([]);
   const [state, setState] = useState<State>();
-  const { issuesQuery } = useIssues({ state, labels: selectLabels });
+
+  const { issuesQuery, page, nextPage, PrevePage } = useIssues({
+    state,
+    labels: selectLabels,
+  });
 
   const onchangeLabel = (labelName: string) => {
     selectLabels.includes(labelName)
@@ -28,6 +32,16 @@ export const ListView = () => {
             onStateChange={(newState) => setState(newState)}
           />
         )}
+
+        <div className="d-flex mt-2 justify-content-between align-items-center">
+          <button className="btn btn-outline-primary" onClick={PrevePage}>
+            Prev
+          </button>
+          <span>{page}</span>
+          <button className="btn btn-outline-primary" onClick={nextPage}>
+            Next
+          </button>
+        </div>
       </div>
 
       <div className="col-4">
