@@ -1,9 +1,9 @@
 # React Query - Issues - IN PROGRESS
 
 1. Clonar repositório
-2. Executar ``` yarn install``` o ```npm install```
-3. Executar ``` npm run dev ```
-
+2. Executar ` yarn install` o `npm install`
+3. Executar `npm run dev`
+4. será necessário gerar novo token de acesso e mudar token do arquivo `githubApi.ts`: settings -> Developer settings -> Personal access tokens -> Fine-grained tokens -> Generate new token (em account permissions selecione Read-only na opção Interaction limits)
 
 # Imagens
 
