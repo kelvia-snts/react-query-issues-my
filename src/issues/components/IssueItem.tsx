@@ -36,7 +36,7 @@ export const IssueItem: FC<Props> = ({ issueItem }) => {
 
   return (
     <>
-      {issueItem.map(({ number, user, id, state, title, comments }) => (
+      {issueItem.map(({ number, user, id, state, title, comments, labels }) => (
         <div
           key={id}
           className="card mb-2 issue"
@@ -56,6 +56,20 @@ export const IssueItem: FC<Props> = ({ issueItem }) => {
                 #{number} opened 2 days ago by{" "}
                 <span className="fw-bold">{user.login}</span>
               </span>
+              <div>
+                {labels.map((label) => (
+                  <span
+                    key={label.id}
+                    className="badge rounded-pill m1"
+                    style={{
+                      backgroundColor: `#${label.color}`,
+                      color: "black",
+                    }}
+                  >
+                    {label.name}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="d-flex align-items-center">
