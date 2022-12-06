@@ -2,14 +2,14 @@ import { useState } from "react";
 import { LoadingIcons } from "../../shared/components/LoadingIcons";
 import { IssueList } from "../components/IssueList";
 import { LabelPicker } from "../components/LabelPicker";
-import { useIssues } from "../hooks";
+import { useIssuesInifite } from "../hooks";
 import { State } from "../interfaces";
 
-export const ListView = () => {
+export const ListViewInfinite = () => {
   const [selectLabels, setSelectLabels] = useState<string[]>([]);
   const [state, setState] = useState<State>();
 
-  const { issuesQuery, page, nextPage, PrevePage } = useIssues({
+  const { issuesQuery } = useIssuesInifite({
     state,
     labels: selectLabels,
   });
@@ -27,29 +27,18 @@ export const ListView = () => {
           <LoadingIcons />
         ) : (
           <IssueList
-            issues={issuesQuery.data || []}
+            issues={issuesQuery.data?.pages.flat() || []}
             state={state}
             onStateChange={(newState) => setState(newState)}
           />
         )}
-
-        <div className="d-flex mt-2 justify-content-between align-items-center">
-          <button
-            disabled={issuesQuery.isFetching}
-            className="btn btn-outline-primary"
-            onClick={PrevePage}
-          >
-            Prev
-          </button>
-          <span>{page}</span>
-          <button
-            disabled={issuesQuery.isFetching}
-            className="btn btn-outline-primary"
-            onClick={nextPage}
-          >
-            Next
-          </button>
-        </div>
+        <button
+          disabled={!issuesQuery.hasNextPage}
+          className="btn btn-outline-primary mt-2"
+          onClick={() => issuesQuery.fetchNextPage()}
+        >
+          Load More...
+        </button>
       </div>
 
       <div className="col-4">
