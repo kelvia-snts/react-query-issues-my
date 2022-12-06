@@ -6,7 +6,9 @@
 4. será necessário gerar novo token de acesso e mudar token do arquivo `githubApi.ts`: settings -> Developer settings -> Personal access tokens -> Fine-grained tokens -> Generate new token (em account permissions selecione Read-only na opção Interaction limits)
 
 # Imagens
-![localhost_5173_issues_list (1)](https://user-images.githubusercontent.com/69319634/204383493-b9f12561-e94a-415c-912b-b5fed29d2b1b.png)
 
-![localhost_5173_issues_list (2)](https://user-images.githubusercontent.com/69319634/204383482-02fd0d71-e2d1-46d5-ac7c-c60937417eed.png)
-
+![Captura de tela de 2022-12-06 13-50-00](https://user-images.githubusercontent.com/69319634/205973579-9f15d147-fa65-478c-8634-f7417a231303.png)
+![Captura de tela de 2022-12-06 13-51-54](https://user-images.githubusercontent.com/69319634/205973594-14412047-1244-4a47-9126-d6f1499212b7.png)
+![Captura de tela de 2022-12-06 13-52-16](https://user-images.githubusercontent.com/69319634/205973614-212a8af1-1538-40f7-8056-f6c5e1dac608.png)
+![Captura de tela de 2022-12-06 13-52-28](https://user-images.githubusercontent.com/69319634/205973637-db5ef29f-d7f6-40d3-9bfc-bf0733fbb8ec.png)
+![localhost_5173_issues_list_infinite](https://user-images.githubusercontent.com/69319634/205973665-b6455479-90c8-4faa-8ab9-f261ca2c5419.png)
