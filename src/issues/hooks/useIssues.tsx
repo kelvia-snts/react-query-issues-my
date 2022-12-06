@@ -26,7 +26,7 @@ const getIssues = async ({
     params.append("labels", labelString);
   }
 
-  params.append("page", page?.toString());
+  params.append("page", page.toString());
   params.append("per_page", "2");
 
   const { data } = await githubApi.get<Issue[]>("/issues", { params });
